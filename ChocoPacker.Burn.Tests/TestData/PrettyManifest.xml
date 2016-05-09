@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BurnManifest xmlns="http://schemas.microsoft.com/wix/2008/Burn">
+	<Log PathVariable="WixBundleLog" Prefix="Microsoft_.NET_Core_CLI_for_Windows_(1.0.0-rc2-002543)" Extension="log" />
+	<RelatedBundle Id="{CF220D0B-51EC-580D-DCAD-A4D4D5402A61}" Action="Upgrade" />
+	<Variable Id="DOTNETHOME" Value="[ProgramFiles6432Folder]dotnet" Type="string" Hidden="no" Persisted="no" />
+	<Variable Id="WixBundleName" Hidden="no" Persisted="yes" />
+	<Variable Id="WixBundleOriginalSource" Hidden="no" Persisted="yes" />
+	<Variable Id="WixBundleOriginalSourceFolder" Hidden="no" Persisted="yes" />
+	<Variable Id="WixBundleLastUsedSource" Hidden="no" Persisted="yes" />
+	<RegistrySearch Id="PreviousInstallFolderSearch" Variable="PreviousInstallFolder" Root="HKLM" Key="SOFTWARE\dotnet\Setup" Value="InstallDir" Type="value" VariableType="string" />
+	<RegistrySearch Id="VCRedist_KeyExists" Variable="VCRedist_KeyExists" Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" Value="Version" Type="exists" />
+	<RegistrySearch Id="VCRedist_KeyValue" Variable="VCRedist_KeyValue" Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" Value="Version" Type="value" VariableType="string" />
+	<DirectorySearch Id="wdsAE5FC2C445964C91EBB26A596E42D1C3" Variable="DOTNETHOME" Condition="PreviousInstallFolder" Path="[PreviousInstallFolder]" Type="path" />
+	<UX>
+		<Payload Id="WixStandardBootstrapperApplication.Foundation" FilePath="wixstdba.dll" FileSize="175616" Hash="B3FB498369FABDE14837C202660E4C237B3D44A1" Packaging="embedded" SourcePath="u0" />
+		<Payload Id="pay231B637690D466136D6FB69DD52CD8AA" FilePath="thm.xml" FileSize="9492" Hash="6EED993BD374D16D705F7FDDAEEF93104CCABCDB" Packaging="embedded" SourcePath="u1" />
+		<Payload Id="pay8B2B77341071EEBF7F18CB6B0542513B" FilePath="thm.wxl" FileSize="3943" Hash="B70768460A6DB8EF8EEA32CC77BE5ABBE91B2C0D" Packaging="embedded" SourcePath="u2" />
+		<Payload Id="pay862B71F2BACFC15ACB5971AEF6683434" FilePath="bg.png" FileSize="4054" Hash="8E812CCEBC9A0319FB3A409087622A986F9D642E" Packaging="embedded" SourcePath="u3" />
+		<Payload Id="pay6216388D1F3CF026D7BF6EC8EF3E8AAE" FilePath="eula.rtf" FileSize="14123" Hash="28CD89D2A4F630B051DBA1C1011AB3D721FF617F" Packaging="embedded" SourcePath="u4" />
+		<Payload Id="ux018A3672B47BC33C533DBA884702200B" FilePath="BootstrapperApplicationData.xml" FileSize="8258" Hash="B9AEE9D430DCA2C72C3642B30F50B80FC05465EC" Packaging="embedded" SourcePath="u5" />
+	</UX>
+	<Container Id="WixAttachedContainer" FileSize="26583978" Hash="E16814C99AEEB004F30D37163B9B682C29EA4C85" FilePath="dotnet-dev-win-x64.1.0.0-rc2-002543.exe" AttachedIndex="1" Attached="yes" Primary="yes" />
+	<Payload Id="VC_redist.x64.exe" FilePath="VC_redist.x64.exe" FileSize="14773216" Hash="9A19A51D1F40CD5CD5ECB6E4E4F978F18DA8212A" CertificateRootPublicKeyIdentifier="52868DFCA6E3AF2632389E6C1EE7D0468D3797D0" CertificateRootThumbprint="3BDA323E552DB1FDE5F4FBEE75D6D5B2B187EEDC" DownloadUrl="http://go.microsoft.com/fwlink/?LinkID=615460&amp;amp;clcid=0x409" Packaging="external" SourcePath="VC_redist.x64.exe" />
+	<Payload Id="dotnet_dev_win_x64.1.0.0_rc2_002543.msi" FilePath="dotnet-dev-win-x64.1.0.0-rc2-002543.msi" FileSize="618496" Hash="88E047BF0E9B8BB5D135A3D8FBC208A400C5D37E" Packaging="embedded" SourcePath="a0" Container="WixAttachedContainer" />
+	<Payload Id="dotnet_sharedframework_win_x64.1.0.0_rc2_3002543.msi" FilePath="dotnet-sharedframework-win-x64.1.0.0-rc2-3002543.msi" FileSize="20504576" Hash="D0AEF4920970DDA2792E980A46EFD0F27C735874" Packaging="embedded" SourcePath="a1" Container="WixAttachedContainer" />
+	<Payload Id="dotnet_host_win_x64.1.0.0_rc2_002543.msi" FilePath="dotnet-host-win-x64.1.0.0-rc2-002543.msi" FileSize="815104" Hash="A489CF7856A06865F3E4006ECE554DEEC75DCCAE" Packaging="embedded" SourcePath="a2" Container="WixAttachedContainer" />
+	<Payload Id="cab9BA8FDC2BFC9792604D5A444A9F6F58A" FilePath="dnet-1.cab" FileSize="5751434" Hash="E531EF3F18625AE8BFC62910BCC1830DB257DF9A" Packaging="embedded" SourcePath="a3" Container="WixAttachedContainer" />
+	<RollbackBoundary Id="WixDefaultBoundary" Vital="yes" />
+	<Registration Id="{aa4ffaa7-f2a1-40c4-a7b9-e2424e3620f8}" ExecutableName="dotnet-dev-win-x64.1.0.0-rc2-002543.exe" PerMachine="yes" Tag="" Version="1.0.0.2543" ProviderKey="{aa4ffaa7-f2a1-40c4-a7b9-e2424e3620f8}">
+		<Arp Register="yes" DisplayName="Microsoft .NET Core CLI for Windows (1.0.0-rc2-002543)" DisplayVersion="1.0.0.2543" Publisher="Microsoft Corporation" AboutUrl="http://dotnet.github.io/" />
+		<SoftwareTag Filename="Microsoft .NET Core CLI for Windows (1.0.0-rc2-002543).swidtag" Regid="microsoft.com" Path="[DOTNETHOME]">
+			<![CDATA[﻿<?xml version="1.0" encoding="utf-8"?>
+<SoftwareIdentity tagId="wix:bundle/AA4FFAA7-F2A1-40C4-A7B9-E2424E3620F8" name="Microsoft .NET Core CLI for Windows (1.0.0-rc2-002543)" version="1.0.0.2543" versionScheme="multipartnumeric" xmlns="http://standards.iso.org/iso/19770/-2/2015/schema.xsd">
+  <Entity name="Microsoft Corporation" regid="microsoft.com" role="softwareCreator tagCreator" />
+  <Meta persistentId="wix:bundle.upgrade/CF220D0B-51EC-580D-DCAD-A4D4D5402A61" />
+</SoftwareIdentity>]]>
+		</SoftwareTag>
+	</Registration>
+	<Chain DisableSystemRestore="yes" ParallelCache="yes">
+		<ExePackage Id="VC_redist.x64.exe" Cache="yes" CacheId="9A19A51D1F40CD5CD5ECB6E4E4F978F18DA8212A" InstallSize="14773216" Size="14773216" PerMachine="yes" Permanent="yes" Vital="yes" RollbackBoundaryForward="WixDefaultBoundary" LogPathVariable="WixBundleLog_VC_redist.x64.exe" RollbackLogPathVariable="WixBundleRollbackLog_VC_redist.x64.exe" DetectCondition="(VCRedist_KeyExists AND VCRedist_KeyValue &gt;= &quot;v14.0.23506.00&quot;)" InstallArguments="/q /norestart" UninstallArguments="" RepairArguments="" Repairable="no">
+			<PayloadRef Id="VC_redist.x64.exe" />
+		</ExePackage>
+		<MsiPackage Id="dotnet_dev_win_x64.1.0.0_rc2_002543.msi" Cache="yes" CacheId="{F658E703-1004-4E60-A28E-3ECE0F201CB3}v4.0.2543" InstallSize="18632034" Size="6369930" PerMachine="yes" Permanent="no" Vital="yes" LogPathVariable="WixBundleLog_dotnet_dev_win_x64.1.0.0_rc2_002543.msi" RollbackLogPathVariable="WixBundleRollbackLog_dotnet_dev_win_x64.1.0.0_rc2_002543.msi" ProductCode="{F658E703-1004-4E60-A28E-3ECE0F201CB3}" Language="1033" Version="4.0.2543" DisplayInternalUI="no">
+			<MsiProperty Id="ARPSYSTEMCOMPONENT" Value="1" />
+			<MsiProperty Id="DOTNETHOME" Value="[DOTNETHOME]" />
+			<Provides Key="Dotnet.CLI_1.0.0.002543" Imported="yes" />
+			<RelatedPackage Id="{D5EF6C5B-55A5-76D5-7610-F84DB1ADA2CA}" MaxVersion="4.0.2543" MaxInclusive="no" OnlyDetect="no" />
+			<RelatedPackage Id="{D5EF6C5B-55A5-76D5-7610-F84DB1ADA2CA}" MinVersion="4.0.2543" MinInclusive="no" OnlyDetect="yes" />
+			<PayloadRef Id="dotnet_dev_win_x64.1.0.0_rc2_002543.msi" />
+			<PayloadRef Id="cab9BA8FDC2BFC9792604D5A444A9F6F58A" />
+		</MsiPackage>
+		<MsiPackage Id="dotnet_sharedframework_win_x64.1.0.0_rc2_3002543.msi" Cache="yes" CacheId="{5C2F8690-6002-4F76-A94C-3573B7772360}v1.0.0" InstallSize="59380471" Size="20504576" PerMachine="yes" Permanent="no" Vital="yes" LogPathVariable="WixBundleLog_dotnet_sharedframework_win_x64.1.0.0_rc2_3002543.msi" RollbackLogPathVariable="WixBundleRollbackLog_dotnet_sharedframework_win_x64.1.0.0_rc2_3002543.msi" ProductCode="{5C2F8690-6002-4F76-A94C-3573B7772360}" Language="1033" Version="1.0.0" DisplayInternalUI="no">
+			<MsiProperty Id="ARPSYSTEMCOMPONENT" Value="1" />
+			<MsiProperty Id="DOTNETHOME" Value="[DOTNETHOME]" />
+			<Provides Key="DotNet.CLI.SharedFramework.Microsoft.NETCore.App_1.0.0_rc2_3002543" Imported="yes" />
+			<RelatedPackage Id="{B00E0205-5A16-635E-F41A-6A114D4DE158}" MaxVersion="1.0.0" MaxInclusive="no" OnlyDetect="no" />
+			<RelatedPackage Id="{B00E0205-5A16-635E-F41A-6A114D4DE158}" MinVersion="1.0.0" MinInclusive="no" OnlyDetect="yes" />
+			<PayloadRef Id="dotnet_sharedframework_win_x64.1.0.0_rc2_3002543.msi" />
+		</MsiPackage>
+		<MsiPackage Id="dotnet_host_win_x64.1.0.0_rc2_002543.msi" Cache="yes" CacheId="{8C648B01-C5CF-4D66-BE8F-D5D63A0667D4}v4.0.2543" InstallSize="728568" Size="815104" PerMachine="yes" Permanent="no" Vital="yes" RollbackBoundaryBackward="WixDefaultBoundary" LogPathVariable="WixBundleLog_dotnet_host_win_x64.1.0.0_rc2_002543.msi" RollbackLogPathVariable="WixBundleRollbackLog_dotnet_host_win_x64.1.0.0_rc2_002543.msi" ProductCode="{8C648B01-C5CF-4D66-BE8F-D5D63A0667D4}" Language="1033" Version="4.0.2543" DisplayInternalUI="no">
+			<MsiProperty Id="ARPSYSTEMCOMPONENT" Value="1" />
+			<MsiProperty Id="DOTNETHOME" Value="[DOTNETHOME]" />
+			<Provides Key="Dotnet_CLI_SharedHost_1.0.0.002543" Imported="yes" />
+			<RelatedPackage Id="{4553594B-D821-40E0-9A54-9697B13E344C}" MaxVersion="4.0.2543" MaxInclusive="no" OnlyDetect="no" />
+			<RelatedPackage Id="{4553594B-D821-40E0-9A54-9697B13E344C}" MinVersion="4.0.2543" MinInclusive="no" OnlyDetect="yes" />
+			<PayloadRef Id="dotnet_host_win_x64.1.0.0_rc2_002543.msi" />
+		</MsiPackage>
+	</Chain>
+</BurnManifest>
