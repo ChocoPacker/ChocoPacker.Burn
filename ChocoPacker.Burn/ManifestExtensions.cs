@@ -21,8 +21,7 @@ namespace ChocoPacker.Burn
                 Author = arp.ReadAttribute("Publisher"),
                 ProductName = arp.ReadAttribute("DisplayName"),
                 ProductVersion = arp.ReadAttribute("DisplayVersion"),
-                UninstallString = $"\"{uninstallerPath}\" {UninstallArguments}",
-                InstallString = $"{exeName} {InstallArguments}"
+                UninstallString = $"\"{uninstallerPath}\" {UninstallArguments}"
             };
         }
         

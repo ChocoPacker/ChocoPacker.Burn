@@ -12,7 +12,6 @@ namespace ChocoPacker.Burn.Tests
             var installerInfo = resource.ParseInstallerInfo();
             
             Assert.Equal("Microsoft Corporation", installerInfo.Author);
-            Assert.Equal("dotnet-dev-win-x64.1.0.0-rc2-002543.exe /install /quiet /norestart", installerInfo.InstallString);
             Assert.Equal("Microsoft .NET Core CLI for Windows (1.0.0-rc2-002543)", installerInfo.ProductName);
             Assert.Equal("1.0.0.2543", installerInfo.ProductVersion);
             Assert.Equal(expectedUninstall, installerInfo.UninstallString);
