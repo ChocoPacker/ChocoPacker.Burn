@@ -12,7 +12,7 @@ namespace ChocoPacker.Burn
 
         public string GetInstallerTypeName(string installerPath)
             => ProcessBurnInstaller(installerPath, archive => {
-                var isBurn = archive.FilterNonBurnFiles().Any(x => archive.IsBurnManifest(x));
+                var isBurn = archive.FilterNonBurnFiles().Any(archive.IsBurnManifest);
                 if (isBurn)
                 {
                     return Constants.InstallerTypeName;

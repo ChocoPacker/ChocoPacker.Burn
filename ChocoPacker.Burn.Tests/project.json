@@ -1,9 +1,9 @@
 ﻿{
-    "version": "0.2.0-release-*",
+    "version": "0.3.0-release-*",
     "dependencies": {
-        "NETStandard.Library": "1.5.0-rc3-*",
+        "NETStandard.Library": "1.6-*",
         "xunit": "2.1.0",
-        "ChocoPacker.Common": "0.2.0-release-*", 
+        "ChocoPacker.Common": "0.3.0-release-*", 
         "ChocoPacker.Burn": "*"
     },
     "frameworks": {
@@ -14,7 +14,7 @@
             ],
             "dependencies": {
                 "Microsoft.NETCore.App": {
-                    "version": "1.0.0-rc2-3002678",
+                    "version": "1.0.0",
                     "type": "platform"
                 },
                 "dotnet-test-xunit": "1.0.0-*"

@@ -7,7 +7,8 @@ namespace ChocoPacker.Burn
     public abstract class BurnBase
     {
         private readonly ISevenZipExtractor _sevenZipExtractor;
-        public BurnBase(IGeneralConfiguration configuration)
+
+        protected BurnBase(IGeneralConfiguration configuration)
         {
             if (configuration == null)
             {

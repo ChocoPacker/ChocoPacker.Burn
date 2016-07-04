@@ -17,12 +17,13 @@ namespace ChocoPacker.Burn
         =>  ProcessBurnInstaller(installerPath, archive => {
                var manifestEntry = archive
                     .FilterNonBurnFiles()
-                    .First(x => archive.IsBurnManifest(x));
+                    .First(archive.IsBurnManifest);
                
                var fileName = Path.GetFileName(installerPath);  
                var manifest = archive.ExtractBurnManifest(manifestEntry);
                var info = manifest.ParseInstallerInfo();
-               info.InstallString = $"\"{fileName}\" {InstallArguments}";
+               info.InstallExecutable = fileName;
+               info.InstallArguments = InstallArguments;
                return info;
             });
     }

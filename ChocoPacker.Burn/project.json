@@ -1,15 +1,15 @@
 {
-    "version": "0.2.0-release-*",
+    "version": "0.3.0-release-*",
     "name": "ChocoPacker.Burn",
 
     "dependencies": {
-        "NETStandard.Library": "1.0.0-rc3-*",
-        "ChocoPacker.SevenZip": "0.2.0-release-*",
-        "ChocoPacker.Common": "0.2.0-release-*"
+        "NETStandard.Library": "1.6.0",
+        "ChocoPacker.SevenZip": "0.3.0-release-*",
+        "ChocoPacker.Common": "0.3.0-release-*"
     },
 
     "frameworks": {
         "netcoreapp1.0": {},
-        "netstandard1.5": {}
+        "netstandard1.6": {}
     }
 }
