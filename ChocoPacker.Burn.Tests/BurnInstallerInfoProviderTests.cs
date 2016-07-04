@@ -28,7 +28,7 @@ namespace ChocoPacker.Burn.Tests
             Assert.Equal("Microsoft .NET Core CLI for Windows (1.0.0-rc2-002543)", info.ProductName);
             Assert.Equal("1.0.0.2543", info.ProductVersion);
             Assert.Equal(expectedUninstall, info.UninstallExecutable);
-            Assert.Equal("/install /quiet /norestart", info.UninstallArguments);            
+            Assert.Equal("/uninstall /quiet /norestart", info.UninstallArguments);            
         }
         
         [Fact]
