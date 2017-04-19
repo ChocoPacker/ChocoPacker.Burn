@@ -1,3 +1,4 @@
+using Microsoft.DotNet.PlatformAbstractions;
 using System.IO;
 using System.Reflection;
 using System.Xml.Linq;
@@ -21,6 +22,6 @@ namespace ChocoPacker.Burn.Tests
         }
 
         public static string GetTestFilePath(string name)
-            => Path.Combine(Directory.GetCurrentDirectory(), "TestFiles", name);
+            => Path.Combine(ApplicationEnvironment.ApplicationBasePath, "TestFiles", name);
     }
 }
