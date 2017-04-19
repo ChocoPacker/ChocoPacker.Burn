@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>0.3.0-release</VersionPrefix>
+    <TargetFrameworks>netcoreapp1.0;netstandard1.6</TargetFrameworks>
+    <AssemblyName>ChocoPacker.Burn</AssemblyName>
+    <PackageId>ChocoPacker.Burn</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ChocoPacker.SevenZip" Version="0.3.0-release-*" />
+    <PackageReference Include="ChocoPacker.Common" Version="0.3.0-release-*" />
+  </ItemGroup>
+
+</Project>

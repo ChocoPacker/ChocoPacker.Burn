@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>0.3.0-release</VersionPrefix>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>ChocoPacker.Burn.Tests</AssemblyName>
+    <PackageId>ChocoPacker.Burn.Tests</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <NetStandardImplicitPackageVersion>1.6-*</NetStandardImplicitPackageVersion>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TestData\*.*" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChocoPacker.Burn\ChocoPacker.Burn.csproj" />
+  </ItemGroup>
+  
+<ItemGroup>
+    <Content Include="..\TestFiles\*.*">
+      <Link>TestFiles\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="ChocoPacker.Common" Version="0.3.0-release-*" />
+  </ItemGroup>
+
+</Project>
